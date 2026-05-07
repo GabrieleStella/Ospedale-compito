@@ -25,7 +25,7 @@
             margin-bottom: 20px;
             color: #2c3e50;
         }
-        input {
+        input, select {
             width: 100%;
             padding: 10px;
             margin: 10px 0;
@@ -60,14 +60,32 @@
 
     <div class="box">
         <h2>Login</h2>
-        <input type="email" placeholder="Email" required>
-        <input type="password" placeholder="Password" required>
-        <button onclick="window.location.href='index.html'">Accedi</button>
+        <input type="text" id="nomeutente" placeholder="Nome Utente" required>
+        <input type="password" id="password" placeholder="Password" required>
+        
+        <select id="ruolo">
+            <option value="medico">Medico</option>
+            <option value="farmacista">Farmacista</option>
+        </select>
+
+        <button onclick="login()">Accedi</button>
         
         <div class="link-footer">
             Non hai un account? <a href="registrazione.html">Registrati qui</a>
         </div>
     </div>
+
+    <script>
+        function login() {
+            const ruolo = document.getElementById('ruolo').value;
+            
+            if (ruolo === "medico") {
+                window.location.href = 'index_medico.html';
+            } else {
+                window.location.href = 'index_farmacista.html';
+            }
+        }
+    </script>
 
 </body>
 </html>
