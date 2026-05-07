@@ -50,8 +50,6 @@
 <body>
 
 <nav>
-    <a href="index.html">Home</a>
-    <a href="registrazione.php">Registrati</a>
 </nav>
 
 <?php

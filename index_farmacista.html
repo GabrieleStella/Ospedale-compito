@@ -14,6 +14,21 @@
         th, td { text-align: left; padding: 12px; border-bottom: 1px solid #ddd; }
         th { background-color: #f8f9fa; }
         .status-low { color: #e74c3c; font-weight: bold; }
+        
+        /* Stile per il bottone ordina nella tabella */
+        .btn-ordina {
+            background: #27ae60;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .btn-ordina:hover {
+            background: #2ecc71;
+        }
     </style>
 </head>
 <body>
@@ -24,14 +39,13 @@
 
 <nav>
     <a href="index_farmacista.html">Home</a>
-    <a href="farmacia.html">Inventario</a>
-    <a href="ordini.html">Ordini Reparti</a>
+    <a href="login.html" style="float: right;">Logout</a>
 </nav>
 
 <div class="container">
     <div class="card">
         <h2>Benvenuto Farmacista</h2>
-        <p>Monitoraggio scorte e distribuzione farmaci per reparto.</p>
+        <p>Monitoraggio scorte e gestione ordini farmaci.</p>
     </div>
 
     <div class="card">
@@ -41,28 +55,24 @@
                 <tr>
                     <th>Farmaco</th>
                     <th>Quantità</th>
-                    <th>Reparto Destinazione</th>
-                    <th>Data Ultimo Carico</th>
+                    <th>Azione</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td>Tachipirina 500mg</td>
                     <td>150 unità</td>
-                    <td>Medicina Generale</td>
-                    <td>05/05/2024</td>
+                    <td><button class="btn-ordina" onclick="window.location.href='ordina.php'">Ordina</button></td>
                 </tr>
                 <tr>
                     <td>Amoxicillina</td>
                     <td class="status-low">15 unità (Scarse)</td>
-                    <td>Pediatria</td>
-                    <td>01/05/2024</td>
+                    <td><button class="btn-ordina" onclick="window.location.href='ordina.php'">Ordina</button></td>
                 </tr>
                 <tr>
                     <td>Bentelan</td>
                     <td>60 unità</td>
-                    <td>Pronto Soccorso</td>
-                    <td>06/05/2024</td>
+                    <td><button class="btn-ordina" onclick="window.location.href='ordina.php'">Ordina</button></td>
                 </tr>
             </tbody>
         </table>
