@@ -1,0 +1,54 @@
+body {
+    font-family: Arial;
+    margin: 0;
+    background: #f4f4f4;
+}
+
+/* HEADER */
+header {
+    background: #2c3e50;
+    color: white;
+    padding: 15px;
+}
+
+/* NAVBAR */
+nav {
+    background: #34495e;
+    padding: 10px;
+}
+
+nav a {
+    color: white;
+    margin-right: 15px;
+    text-decoration: none;
+}
+
+/* CONTENUTO */
+.container {
+    padding: 20px;
+}
+
+/* CARD */
+.card {
+    background: white;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+/* BOTTONI */
+button {
+    background: #2c3e50;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    margin: 5px 0;
+    cursor: pointer;
+}
+
+/* INPUT */
+input {
+    padding: 8px;
+    margin: 5px 0;
+    width: 200px;
+}
