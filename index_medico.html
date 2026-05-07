@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Ospedale - Dashboard Medico</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; background: #f4f4f4; }
+        header { background: #2c3e50; color: white; padding: 15px; }
+        nav { background: #34495e; padding: 10px; }
+        nav a { color: white; margin-right: 15px; text-decoration: none; }
+        .container { padding: 20px; }
+        .card { background: white; padding: 15px; margin-bottom: 15px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .btn { background: #2c3e50; color: white; padding: 8px 15px; text-decoration: none; border-radius: 4px; font-size: 14px; margin-right: 5px; }
+        .btn:hover { background: #34495e; }
+        .reparto-tag { background: #3498db; color: white; padding: 3px 8px; border-radius: 12px; font-size: 12px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+        th, td { text-align: left; padding: 10px; border-bottom: 1px solid #ddd; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Gestione Ospedale - Area Medica</h1>
+</header>
+
+<nav>
+    <a href="index_medico.html">Home</a>
+    <a href="pazienti.html">I Miei Pazienti</a>
+    <a href="visite.html">Gestione Visite</a>
+    <a href="prescrizioni.html">Nuova Prescrizione</a>
+    <a href="login.html">Logout</a>
+</nav>
+
+<div class="container">
+    <div class="card">
+        <h2>Benvenuto Dottore <span class="reparto-tag">Reparto: Cardiologia</span></h2>
+        <div style="margin-top: 15px;">
+            <a href="nuova_visita.html" class="btn">+ Crea Nuova Visita</a>
+            <a href="nuova_prescrizione.html" class="btn">+ Fai Prescrizione</a>
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>Visite Programmate</h3>
+        <table>
+            <tr>
+                <th>Paziente</th>
+                <th>Orario</th>
+                <th>Azioni</th>
+            </tr>
+            <tr>
+                <td>Mario Rossi</td>
+                <td>10:30</td>
+                <td><a href="#" class="btn">Vedi Cartella</a></td>
+            </tr>
+            <tr>
+                <td>Luca Bianchi</td>
+                <td>11:45</td>
+                <td><a href="#" class="btn">Vedi Cartella</a></td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="card">
+        <h3>Ultime Prescrizioni Effettuate</h3>
+        <table>
+            <tr>
+                <th>Paziente</th>
+                <th>Farmaco</th>
+                <th>Data Inizio</th>
+                <th>Data Fine</th>
+            </tr>
+            <tr>
+                <td>Mario Rossi</td>
+                <td>Cardioaspirina</td>
+                <td>07/05/2024</td>
+                <td>07/06/2024</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>
