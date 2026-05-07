@@ -5,30 +5,33 @@
     <title>Login - Ospedale</title>
     <style>
         body {
-            font-family: Arial;
+            font-family: Arial, sans-serif;
             background: #f4f4f4;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-        }
-        .container {
-            display: flex;
-            gap: 30px;
+            margin: 0;
         }
         .box {
             background: white;
-            padding: 20px;
-            border-radius: 5px;
-            width: 250px;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            width: 300px;
+            text-align: center;
         }
         h2 {
-            text-align: center;
+            margin-bottom: 20px;
+            color: #2c3e50;
         }
         input {
             width: 100%;
-            padding: 8px;
-            margin: 5px 0;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
         }
         button {
             width: 100%;
@@ -36,33 +39,35 @@
             background: #2c3e50;
             color: white;
             border: none;
+            border-radius: 4px;
+            cursor: pointer;
             margin-top: 10px;
+        }
+        button:hover {
+            background: #34495e;
+        }
+        .link-footer {
+            margin-top: 15px;
+            font-size: 0.9em;
+        }
+        .link-footer a {
+            color: #3498db;
+            text-decoration: none;
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-
-    <!-- LOGIN -->
     <div class="box">
         <h2>Login</h2>
-        <input type="email" placeholder="Email">
-        <input type="password" placeholder="Password">
-        <button>Accedi</button>
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Password" required>
+        <button onclick="window.location.href='index.html'">Accedi</button>
+        
+        <div class="link-footer">
+            Non hai un account? <a href="registrazione.html">Registrati qui</a>
+        </div>
     </div>
-
-    <!-- REGISTRAZIONE -->
-    <div class="box">
-        <h2>Registrazione</h2>
-        <input type="text" placeholder="Nome">
-        <input type="text" placeholder="Cognome">
-        <input type="email" placeholder="Email">
-        <input type="password" placeholder="Password">
-        <button>Registrati</button>
-    </div>
-
-</div>
 
 </body>
 </html>
