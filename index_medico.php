@@ -26,9 +26,10 @@
 
 <nav>
     <a href="index_medico.php">Home</a>
-    <a href="pazienti.html">I Miei Pazienti</a>
-    <a href="visite.html">Gestione Visite</a>
-    <a href="prescrizioni.html">Nuova Prescrizione</a>
+    <a href="pazienti.php">I Miei Pazienti</a>
+    <a href="visite.php">Gestione Visite</a>
+    <a href="prescrizioni.php">Nuova Prescrizione</a>
+    <a href="aggiungi_paziente.php">+ Aggiungi Paziente</a>
     <a href="login.php" style="float: right;">Logout</a>
 </nav>
 
