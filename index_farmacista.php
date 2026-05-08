@@ -34,6 +34,7 @@
 
 <nav>
     <a href="index_farmacista.php">Home</a>
+    <a href="aggiungi_farmaco.php">Aggiungi Farmaco</a>
     <a href="login.php" style="float: right;">Logout</a>
 </nav>
 
