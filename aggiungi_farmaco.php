@@ -116,9 +116,11 @@ mysqli_close($conn);
             </form>
         <?php endif; ?>
 
+        <?php if (!$successo): ?>
         <div class="link-footer">
             <a href="index_farmacista.php">← Torna alla Home</a>
         </div>
+        <?php endif; ?>
     </div>
 </div>
 
