@@ -141,8 +141,8 @@ mysqli_close($conn);
             <span class="reparto-tag">Reparto: <?= htmlspecialchars($reparto_medico) ?></span>
         </h2>
         <div style="margin-top: 15px;">
-            <a href="nuova_visita.html" class="btn">+ Crea Nuova Visita</a>
-            <a href="nuova_prescrizione.html" class="btn">+ Fai Prescrizione</a>
+            <a href="visite.php" class="btn">+ Crea Nuova Visita</a>
+            <a href="prescrizioni.php" class="btn">+ Fai Prescrizione</a>
         </div>
     </div>
 

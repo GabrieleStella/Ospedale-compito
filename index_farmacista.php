@@ -61,6 +61,27 @@ if (!$ris) {
     die("Errore nella query: " . mysqli_error($conn));
 }
 
+// ------------------------------------------------
+// Prescrizioni recenti dei medici (ultime 50)
+// ------------------------------------------------
+$prescrizioni_medici = [];
+$sql_pres = "SELECT pr.id_prescrizione, pr.posologia, pr.quantita,
+                    p.nome AS pnome, p.cognome AS pcognome,
+                    m.nome AS mnome,
+                    v.data_ora
+             FROM PRESCRIZIONI pr
+             JOIN VISITE v   ON pr.id_visita  = v.id_visita
+             JOIN PAZIENTI p ON v.id_paziente = p.id_paziente
+             JOIN MEDICI m   ON v.id_medico   = m.id_medico
+             ORDER BY v.data_ora DESC
+             LIMIT 50";
+$ris_pres = mysqli_query($conn, $sql_pres);
+if ($ris_pres) {
+    while ($row = mysqli_fetch_assoc($ris_pres)) {
+        $prescrizioni_medici[] = $row;
+    }
+}
+
 mysqli_close($conn);
 ?>
 
@@ -96,6 +117,40 @@ mysqli_close($conn);
                     </td>
                 </tr>
                 <?php endwhile; ?>
+            </tbody>
+        </table>
+    </div>
+    </div>
+
+    <!-- Prescrizioni richieste dai medici -->
+    <div class="card">
+        <h3>Richieste Farmaci dai Medici</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Data Visita</th>
+                    <th>Medico</th>
+                    <th>Paziente</th>
+                    <th>Farmaco / Posologia</th>
+                    <th>Quantità Richiesta</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php if (empty($prescrizioni_medici)): ?>
+                <tr>
+                    <td colspan="5" style="color:#999; font-style:italic;">Nessuna prescrizione registrata.</td>
+                </tr>
+                <?php else: ?>
+                    <?php foreach ($prescrizioni_medici as $pr): ?>
+                    <tr>
+                        <td><?= date('d/m/Y H:i', strtotime($pr['data_ora'])) ?></td>
+                        <td><?= htmlspecialchars($pr['mnome']) ?></td>
+                        <td><?= htmlspecialchars($pr['pcognome'] . ' ' . $pr['pnome']) ?></td>
+                        <td><?= htmlspecialchars($pr['posologia']) ?></td>
+                        <td><?= htmlspecialchars($pr['quantita']) ?> unità</td>
+                    </tr>
+                    <?php endforeach; ?>
+                <?php endif; ?>
             </tbody>
         </table>
     </div>
